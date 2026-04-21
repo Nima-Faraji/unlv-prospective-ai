@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple GitHub Pages landing page for the UNLV Prospective AI project."
+    />
+    <title>UNLV Prospective AI</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">GitHub Pages Ready</p>
+        <h1>UNLV Prospective AI</h1>
+        <p class="hero-copy">
+          A lightweight static site set up to publish cleanly from this
+          repository with GitHub Pages.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="https://github.com/Nima-Faraji/unlv-prospective-ai">View Repository</a>
+          <a class="button secondary" href="#publish">Publishing Notes</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="grid">
+          <article class="card">
+            <h2>Simple by design</h2>
+            <p>
+              This page uses plain HTML, CSS, and a tiny bit of JavaScript, so
+              it can be published without a build pipeline.
+            </p>
+          </article>
+          <article class="card">
+            <h2>Project-site friendly</h2>
+            <p>
+              Asset links are relative, which helps the page work correctly
+              under the repository URL path used by GitHub Pages project sites.
+            </p>
+          </article>
+          <article class="card">
+            <h2>Easy to extend</h2>
+            <p>
+              You can turn this into a fuller site later without changing the
+              basic GitHub Pages setup.
+            </p>
+          </article>
+        </section>
+
+        <section class="panel" id="publish">
+          <h2>How to publish</h2>
+          <ol>
+            <li>Push this repository to GitHub.</li>
+            <li>Open <strong>Settings</strong> in the repository.</li>
+            <li>Open <strong>Pages</strong> in the sidebar.</li>
+            <li>Select <strong>Deploy from a branch</strong>.</li>
+            <li>Choose <strong>main</strong> and <strong>/(root)</strong>.</li>
+          </ol>
+          <p class="note">
+            Expected site URL:
+            <a href="https://nima-faraji.github.io/unlv-prospective-ai/">
+              nima-faraji.github.io/unlv-prospective-ai/
+            </a>
+          </p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Built for GitHub Pages</span>
+        <span id="year"></span>
+      </footer>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
