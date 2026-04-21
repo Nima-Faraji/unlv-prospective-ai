@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
     <meta
       name="description"
       content="A simple GitHub Pages landing page for the UNLV Prospective AI project."
@@ -74,6 +77,29 @@
       </footer>
     </div>
 
+    <script type="text/javascript">
+      function initEmbeddedMessaging() {
+        try {
+          embeddedservice_bootstrap.settings.language = "en_US";
+
+          embeddedservice_bootstrap.init(
+            "00DDS000001gT4b",
+            "UNLV_Service_External_Test",
+            "https://unlv--ecm.sandbox.my.site.com/ESWUNLVServiceExternal1776802099461",
+            {
+              scrt2URL: "https://unlv--ecm.sandbox.my.salesforce-scrt.com",
+            }
+          );
+        } catch (err) {
+          console.error("Error loading Embedded Messaging: ", err);
+        }
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://unlv--ecm.sandbox.my.site.com/ESWUNLVServiceExternal1776802099461/assets/js/bootstrap.min.js"
+      onload="initEmbeddedMessaging()"
+    ></script>
     <script src="./script.js"></script>
   </body>
 </html>
