@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">UNLV AI POC mark</title>
+  <desc id="desc">A stylized crimson square logo with UNLV lettering and a gold accent.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5d0013" />
+      <stop offset="100%" stop-color="#9c0f2d" />
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="36" fill="url(#bg)" />
+  <path d="M22 118h116" stroke="#f1d38a" stroke-width="6" stroke-linecap="round" opacity="0.9" />
+  <text
+    x="80"
+    y="78"
+    text-anchor="middle"
+    fill="#fff8f2"
+    font-family="Avenir Next, Segoe UI, Arial, sans-serif"
+    font-size="44"
+    font-weight="800"
+    letter-spacing="2"
+  >
+    UNLV
+  </text>
+  <text
+    x="80"
+    y="108"
+    text-anchor="middle"
+    fill="#f5dd9c"
+    font-family="Avenir Next, Segoe UI, Arial, sans-serif"
+    font-size="20"
+    font-weight="700"
+    letter-spacing="4"
+  >
+    AI POC
+  </text>
+</svg>

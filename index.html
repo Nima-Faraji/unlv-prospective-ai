@@ -8,71 +8,175 @@
     />
     <meta
       name="description"
-      content="A simple GitHub Pages landing page for the UNLV Prospective AI project."
+      content="A UNLV-branded proof of concept for Salesforce Embedded Messaging on GitHub Pages."
     />
-    <title>UNLV Prospective AI</title>
+    <title>UNLV Messaging POC</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="page-shell">
-      <header class="hero">
-        <p class="eyebrow">GitHub Pages Ready</p>
-        <h1>UNLV Prospective AI</h1>
-        <p class="hero-copy">
-          A lightweight static site set up to publish cleanly from this
-          repository with GitHub Pages.
-        </p>
-        <div class="actions">
-          <a class="button primary" href="https://github.com/Nima-Faraji/unlv-prospective-ai">View Repository</a>
-          <a class="button secondary" href="#publish">Publishing Notes</a>
+      <header class="site-header">
+        <div class="brand-lockup">
+          <img class="brand-mark" src="./unlv-mark.svg" alt="UNLV AI POC logo" />
+          <div>
+            <p class="eyebrow">UNLV Messaging POC</p>
+            <p class="brand-copy">Prospective student support demo</p>
+          </div>
         </div>
+        <a
+          class="header-link"
+          href="https://github.com/Nima-Faraji/unlv-prospective-ai"
+        >
+          View Repository
+        </a>
       </header>
 
       <main>
-        <section class="grid">
-          <article class="card">
-            <h2>Simple by design2</h2>
+        <section class="hero">
+          <div class="hero-copy-block">
+            <p class="hero-kicker">Salesforce Embedded Messaging + GitHub Pages</p>
+            <h1>Show how students can start getting answers right away.</h1>
+            <p class="hero-copy">
+              This proof of concept gives prospective students a simple public
+              landing page, a clear starting point, and guided example prompts
+              to begin the conversation.
+            </p>
+            <div class="actions">
+              <a class="button primary" href="#starter-prompts">
+                See Starter Questions
+              </a>
+              <a class="button secondary" href="#demo-areas">Explore the POC</a>
+            </div>
+            <p class="hero-note">
+              Once the widget loads, use the chat launcher in the bottom-right
+              corner to begin.
+            </p>
+          </div>
+
+          <aside class="hero-panel">
+            <p class="panel-label">How to get started</p>
+            <ol class="steps">
+              <li>Open the messaging launcher in the bottom-right corner.</li>
+              <li>Pick one of the starter questions below or type your own.</li>
+              <li>Use the answers to guide next steps for admissions and support.</li>
+            </ol>
+            <div class="status-pill">
+              <span class="status-dot"></span>
+              Public messaging proof of concept
+            </div>
+          </aside>
+        </section>
+
+        <section class="starter-section" id="starter-prompts">
+          <div class="section-heading">
+            <p class="section-kicker">Start here</p>
+            <h2>Try asking questions like these</h2>
             <p>
-              This page uses plain HTML, CSS, and a tiny bit of JavaScript, so
-              it can be published without a build pipeline.
+              These prompts are written to feel like a real student or family
+              member beginning their journey with UNLV.
+            </p>
+          </div>
+
+          <div class="prompt-grid">
+            <button
+              class="prompt-chip"
+              type="button"
+              data-prompt="What are the admission requirements for first-year students at UNLV?"
+            >
+              What are the admission requirements for first-year students at UNLV?
+            </button>
+            <button
+              class="prompt-chip"
+              type="button"
+              data-prompt="How do I apply, and what documents do I need to submit?"
+            >
+              How do I apply, and what documents do I need to submit?
+            </button>
+            <button
+              class="prompt-chip"
+              type="button"
+              data-prompt="What scholarships or financial aid options should I look into first?"
+            >
+              What scholarships or financial aid options should I look into first?
+            </button>
+            <button
+              class="prompt-chip"
+              type="button"
+              data-prompt="When should I send my transcripts and test scores?"
+            >
+              When should I send my transcripts and test scores?
+            </button>
+            <button
+              class="prompt-chip"
+              type="button"
+              data-prompt="How can I schedule a campus visit or learn more about student life?"
+            >
+              How can I schedule a campus visit or learn more about student life?
+            </button>
+            <button
+              class="prompt-chip"
+              type="button"
+              data-prompt="I am a transfer student. What should I do next?"
+            >
+              I am a transfer student. What should I do next?
+            </button>
+          </div>
+
+          <p class="prompt-hint" id="prompt-hint">
+            Click any prompt to copy it, then paste it into the chat.
+          </p>
+        </section>
+
+        <section class="grid" id="demo-areas">
+          <article class="card">
+            <p class="card-kicker">Admissions</p>
+            <h2>Meet students where they begin</h2>
+            <p>
+              Help visitors ask basic questions without needing to understand
+              campus structure, department ownership, or internal terminology.
             </p>
           </article>
           <article class="card">
-            <h2>Project-site friendly</h2>
+            <p class="card-kicker">Support</p>
+            <h2>Guide them to next steps</h2>
             <p>
-              Asset links are relative, which helps the page work correctly
-              under the repository URL path used by GitHub Pages project sites.
+              Use responses to point students toward applications, records,
+              visits, financial aid, and the right follow-up channels.
             </p>
           </article>
           <article class="card">
-            <h2>Easy to extend</h2>
+            <p class="card-kicker">Scalability</p>
+            <h2>Prototype fast, then expand</h2>
             <p>
-              You can turn this into a fuller site later without changing the
-              basic GitHub Pages setup.
+              This page stays lightweight for demos today, while leaving room
+              for richer flows, analytics, and branded experience layers later.
             </p>
           </article>
         </section>
 
-        <section class="panel" id="publish">
-          <h2>How to publish</h2>
-          <ol>
-            <li>Push this repository to GitHub.</li>
-            <li>Open <strong>Settings</strong> in the repository.</li>
-            <li>Open <strong>Pages</strong> in the sidebar.</li>
-            <li>Select <strong>Deploy from a branch</strong>.</li>
-            <li>Choose <strong>main</strong> and <strong>/(root)</strong>.</li>
-          </ol>
-          <p class="note">
-            Expected site URL:
-            <a href="https://nima-faraji.github.io/unlv-prospective-ai/">
-              nima-faraji.github.io/unlv-prospective-ai/
-            </a>
-          </p>
+        <section class="panel panel-wide">
+          <div>
+            <p class="section-kicker">POC framing</p>
+            <h2>What this page is meant to prove</h2>
+            <p class="panel-copy">
+              The goal is not a full website yet. It is a clear, branded demo
+              that shows how a prospective student can discover the chat,
+              understand what to ask, and start getting value immediately.
+            </p>
+          </div>
+          <div class="mini-list">
+            <p>Good first demo scenarios</p>
+            <ul>
+              <li>Admission and application basics</li>
+              <li>Financial aid and scholarship guidance</li>
+              <li>Transfer and campus-visit questions</li>
+            </ul>
+          </div>
         </section>
       </main>
 
       <footer class="footer">
-        <span>Built for GitHub Pages</span>
+        <span>UNLV Messaging POC</span>
         <span id="year"></span>
       </footer>
     </div>
@@ -83,11 +187,11 @@
           embeddedservice_bootstrap.settings.language = "en_US";
 
           embeddedservice_bootstrap.init(
-            "00DDS000001gT4b",
-            "UNLV_Service_External_Test",
-            "https://unlv--ecm.sandbox.my.site.com/ESWUNLVServiceExternal1776802099461",
+            "00DOy00000NPh2v",
+            "UNLV_Messaging_Public",
+            "https://unlv--devnf2.sandbox.my.site.com/ESWUNLVMessagingPublic1776822254199",
             {
-              scrt2URL: "https://unlv--ecm.sandbox.my.salesforce-scrt.com",
+              scrt2URL: "https://unlv--devnf2.sandbox.my.salesforce-scrt.com",
             }
           );
         } catch (err) {
@@ -97,7 +201,7 @@
     </script>
     <script
       type="text/javascript"
-      src="https://unlv--ecm.sandbox.my.site.com/ESWUNLVServiceExternal1776802099461/assets/js/bootstrap.min.js"
+      src="https://unlv--devnf2.sandbox.my.site.com/ESWUNLVMessagingPublic1776822254199/assets/js/bootstrap.min.js"
       onload="initEmbeddedMessaging()"
     ></script>
     <script src="./script.js"></script>
