@@ -2,181 +2,261 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1"
-    />
-    <meta
-      name="description"
-      content="A UNLV-branded proof of concept for Salesforce Embedded Messaging on GitHub Pages."
-    />
-    <title>UNLV AI Agent POC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="description" content="Get instant answers about UNLV admissions, financial aid, and campus life from our AI assistant." />
+    <title>UNLV Admissions Assistant</title>
     <link rel="stylesheet" href="./styles.css" />
+    <style>
+      /* Page-specific overrides */
+      .hero-copy-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: clamp(2.4rem, 6vw, 4.6rem);
+        max-width: 18ch;
+        line-height: 1.08;
+      }
+
+      .availability-row {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-top: 1.6rem;
+        font-size: 0.9rem;
+        color: rgba(255, 248, 246, 0.65);
+        font-weight: 600;
+        letter-spacing: 0.03em;
+      }
+
+      .avail-dot {
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 50%;
+        background: #6ee7b7;
+        flex-shrink: 0;
+        box-shadow: 0 0 0 4px rgba(110, 231, 183, 0.2);
+      }
+
+      /* Steps with icons */
+      .step-list {
+        list-style: none;
+        margin: 1.1rem 0 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+      }
+
+      .step-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        color: var(--ink-soft);
+        font-size: 0.97rem;
+        line-height: 1.55;
+      }
+
+      .step-num {
+        flex-shrink: 0;
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.1rem;
+      }
+
+      /* Topic chips — simple label row */
+      .topic-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.3rem;
+      }
+
+      .topic-tag {
+        padding: 0.35rem 0.85rem;
+        border-radius: 999px;
+        background: rgba(122, 0, 25, 0.07);
+        color: var(--accent);
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      /* Prompt chips — tighter label style */
+      .prompt-chip .chip-sub {
+        display: block;
+        font-weight: 400;
+        font-size: 0.84rem;
+        color: var(--muted);
+        margin-top: 0.25rem;
+      }
+
+      /* Copied feedback */
+      .prompt-chip.copied {
+        border-color: rgba(122, 0, 25, 0.4);
+        background: linear-gradient(180deg, #fff5f1 0%, #ffeae4 100%);
+      }
+
+      /* Cards — subtle icon */
+      .card-icon {
+        font-size: 1.6rem;
+        margin-bottom: 0.6rem;
+        display: block;
+      }
+
+      /* Remove bottom panel */
+      .panel.panel-wide { display: none; }
+    </style>
   </head>
   <body>
     <div class="page-shell">
+
       <header class="site-header">
         <div class="brand-lockup">
-          <img class="brand-mark" src="./unlv-mark.svg" alt="UNLV AI POC logo" />
+          <img class="brand-mark" src="./unlv-mark.svg" alt="UNLV logo" />
           <div>
-            <p class="eyebrow">UNLV Messaging POC</p>
-            <p class="brand-copy">Prospective student support demo</p>
+            <p class="eyebrow">UNLV Admissions</p>
+            <p class="brand-copy">AI-powered student support</p>
           </div>
         </div>
-        <a
-          class="header-link"
-          href="https://github.com/Nima-Faraji/unlv-prospective-ai"
-        >
-          View Repository
-        </a>
+        <a class="header-link" href="https://www.unlv.edu/admissions">Admissions Office →</a>
       </header>
 
       <main>
         <section class="hero">
           <div class="hero-copy-block">
-            <p class="hero-kicker">Salesforce Embedded Messaging + GitHub Pages</p>
-            <h1>Show how students can start getting answers right away.</h1>
+            <p class="hero-kicker">Available 24 / 7</p>
+            <h1>Your admissions questions, answered.</h1>
             <p class="hero-copy">
-              This proof of concept gives prospective students a simple public
-              landing page, a clear starting point, and guided example prompts
-              to begin the conversation.
+              Ask anything about applying to UNLV — requirements, deadlines,
+              financial aid, campus visits, and more. Our AI assistant gives you
+              instant answers so you can focus on what matters: getting here.
             </p>
             <div class="actions">
-              <a class="button primary" href="#starter-prompts">
-                See Starter Questions
-              </a>
-              <a class="button secondary" href="#demo-areas">Explore the POC</a>
+              <a class="button primary" href="#starter-prompts">See example questions</a>
+              <a class="button secondary" href="#topics">What can I ask?</a>
             </div>
-            <p class="hero-note">
-              Once the widget loads, use the chat launcher in the bottom-right
-              corner to begin.
-            </p>
+            <div class="availability-row">
+              <span class="avail-dot"></span>
+              Chat is live — look for the launcher in the bottom-right corner
+            </div>
           </div>
 
           <aside class="hero-panel">
-            <p class="panel-label">How to get started</p>
-            <ol class="steps">
-              <li>Open the messaging launcher in the bottom-right corner.</li>
-              <li>Pick one of the starter questions below or type your own.</li>
-              <li>Use the answers to guide next steps for admissions and support.</li>
-            </ol>
-            <div class="status-pill">
+            <p class="panel-label">Getting started</p>
+            <ul class="step-list">
+              <li>
+                <span class="step-num">1</span>
+                <span>Click the chat launcher in the <strong>bottom-right corner</strong> of the page.</span>
+              </li>
+              <li>
+                <span class="step-num">2</span>
+                <span>Pick a question below or type your own in plain language — no need for official terminology.</span>
+              </li>
+              <li>
+                <span class="step-num">3</span>
+                <span>Follow the links and next steps provided to move forward with your application.</span>
+              </li>
+            </ul>
+
+            <div class="status-pill" style="margin-top: 1.6rem;">
               <span class="status-dot"></span>
-              Public messaging proof of concept
+              Powered by Salesforce Embedded Messaging
             </div>
           </aside>
         </section>
 
+        <!-- Starter prompts -->
         <section class="starter-section" id="starter-prompts">
           <div class="section-heading">
-            <p class="section-kicker">Start here</p>
-            <h2>Try asking questions like these</h2>
-            <p>
-              These prompts are written to feel like a real student or family
-              member beginning their journey with UNLV.
-            </p>
+            <p class="section-kicker">Example questions</p>
+            <h2>Not sure where to start?</h2>
+            <p>Tap any question to copy it, then paste it into the chat.</p>
           </div>
 
           <div class="prompt-grid">
-            <button
-              class="prompt-chip"
-              type="button"
-              data-prompt="What are the admission requirements for first-year students at UNLV?"
-            >
-              What are the admission requirements for first-year students at UNLV?
+            <button class="prompt-chip" type="button"
+              data-prompt="What are the admission requirements for first-year students at UNLV?">
+              What are the admission requirements for first-year students?
+              <span class="chip-sub">GPA, test scores, required courses</span>
             </button>
-            <button
-              class="prompt-chip"
-              type="button"
-              data-prompt="How do I apply, and what documents do I need to submit?"
-            >
-              How do I apply, and what documents do I need to submit?
+            <button class="prompt-chip" type="button"
+              data-prompt="How do I apply to UNLV and what documents do I need to submit?">
+              How do I apply, and what documents do I need?
+              <span class="chip-sub">Applications, transcripts, deadlines</span>
             </button>
-            <button
-              class="prompt-chip"
-              type="button"
-              data-prompt="What scholarships or financial aid options should I look into first?"
-            >
-              What scholarships or financial aid options should I look into first?
+            <button class="prompt-chip" type="button"
+              data-prompt="What scholarships or financial aid options should I look into first?">
+              What scholarships and financial aid should I look into?
+              <span class="chip-sub">FAFSA, merit awards, need-based aid</span>
             </button>
-            <button
-              class="prompt-chip"
-              type="button"
-              data-prompt="When should I send my transcripts and test scores?"
-            >
-              When should I send my transcripts and test scores?
+            <button class="prompt-chip" type="button"
+              data-prompt="When should I send my transcripts and test scores to UNLV?">
+              When do I send my transcripts and test scores?
+              <span class="chip-sub">Submission windows, official records</span>
             </button>
-            <button
-              class="prompt-chip"
-              type="button"
-              data-prompt="How can I schedule a campus visit or learn more about student life?"
-            >
-              How can I schedule a campus visit or learn more about student life?
+            <button class="prompt-chip" type="button"
+              data-prompt="How can I schedule a campus visit or learn more about student life at UNLV?">
+              How do I schedule a campus visit?
+              <span class="chip-sub">Tours, open houses, student life</span>
             </button>
-            <button
-              class="prompt-chip"
-              type="button"
-              data-prompt="I am a transfer student. What should I do next?"
-            >
-              I am a transfer student. What should I do next?
+            <button class="prompt-chip" type="button"
+              data-prompt="I am a transfer student. What steps should I take to apply to UNLV?">
+              I'm a transfer student — what are my next steps?
+              <span class="chip-sub">Credit transfers, eligibility, timeline</span>
             </button>
           </div>
 
           <p class="prompt-hint" id="prompt-hint">
-            Click any prompt to copy it, then paste it into the chat.
+            These are just starting points — you can ask anything related to your UNLV application.
           </p>
         </section>
 
-        <section class="grid" id="demo-areas">
+        <!-- Topic cards -->
+        <section class="grid" id="topics">
           <article class="card">
+            <span class="card-icon">🎓</span>
             <p class="card-kicker">Admissions</p>
-            <h2>Meet students where they begin</h2>
+            <h2>Apply with confidence</h2>
             <p>
-              Help visitors ask basic questions without needing to understand
-              campus structure, department ownership, or internal terminology.
+              Get clear answers on requirements, deadlines, and what to submit —
+              without having to navigate multiple offices or websites.
             </p>
           </article>
           <article class="card">
-            <p class="card-kicker">Support</p>
-            <h2>Guide them to next steps</h2>
+            <span class="card-icon">💰</span>
+            <p class="card-kicker">Financial Aid</p>
+            <h2>Understand your options</h2>
             <p>
-              Use responses to point students toward applications, records,
-              visits, financial aid, and the right follow-up channels.
+              Ask about scholarships, grants, work-study, and FAFSA guidance
+              specific to UNLV so you can plan ahead.
             </p>
           </article>
           <article class="card">
-            <p class="card-kicker">Scalability</p>
-            <h2>Prototype fast, then expand</h2>
+            <span class="card-icon">🏙️</span>
+            <p class="card-kicker">Campus & Life</p>
+            <h2>Picture yourself here</h2>
             <p>
-              This page stays lightweight for demos today, while leaving room
-              for richer flows, analytics, and branded experience layers later.
+              Learn about housing, student clubs, campus tours, and what it's
+              really like to be a Rebel in Las Vegas.
             </p>
           </article>
         </section>
 
-        <section class="panel panel-wide">
-          <div>
-            <p class="section-kicker">POC framing</p>
-            <h2>What this page is meant to prove</h2>
-            <p class="panel-copy">
-              The goal is not a full website yet. It is a clear, branded demo
-              that shows how a prospective student can discover the chat,
-              understand what to ask, and start getting value immediately.
-            </p>
-          </div>
-          <div class="mini-list">
-            <p>Good first demo scenarios</p>
-            <ul>
-              <li>Admission and application basics</li>
-              <li>Financial aid and scholarship guidance</li>
-              <li>Transfer and campus-visit questions</li>
-            </ul>
-          </div>
-        </section>
       </main>
 
       <footer class="footer">
-        <span>UNLV Messaging POC</span>
+        <span>UNLV Admissions Assistant</span>
         <span id="year"></span>
       </footer>
     </div>
@@ -185,14 +265,11 @@
       function initEmbeddedMessaging() {
         try {
           embeddedservice_bootstrap.settings.language = "en_US";
-
           embeddedservice_bootstrap.init(
             "00DOy00000NPh2v",
             "UNLV_Messaging_Public",
             "https://unlv--devnf2.sandbox.my.site.com/ESWUNLVMessagingPublic1776822254199",
-            {
-              scrt2URL: "https://unlv--devnf2.sandbox.my.salesforce-scrt.com",
-            }
+            { scrt2URL: "https://unlv--devnf2.sandbox.my.salesforce-scrt.com" }
           );
         } catch (err) {
           console.error("Error loading Embedded Messaging: ", err);
