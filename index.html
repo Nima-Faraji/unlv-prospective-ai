@@ -261,26 +261,31 @@
       </footer>
     </div>
 
-    <script type="text/javascript">
-      function initEmbeddedMessaging() {
-        try {
-          embeddedservice_bootstrap.settings.language = "en_US";
-          embeddedservice_bootstrap.init(
-            "00DOy00000NPh2v",
-            "UNLV_Messaging_Public",
-            "https://unlv--devnf2.sandbox.my.site.com/ESWUNLVMessagingPublic1776822254199",
-            { scrt2URL: "https://unlv--devnf2.sandbox.my.salesforce-scrt.com" }
-          );
-        } catch (err) {
-          console.error("Error loading Embedded Messaging: ", err);
-        }
-      }
-    </script>
-    <script
-      type="text/javascript"
-      src="https://unlv--devnf2.sandbox.my.site.com/ESWUNLVMessagingPublic1776822254199/assets/js/bootstrap.min.js"
-      onload="initEmbeddedMessaging()"
-    ></script>
-    <script src="./script.js"></script>
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US';
+
+			// Push the host page URL into a hidden pre-chat field once chat is ready
+			window.addEventListener("onEmbeddedMessagingReady", () => {
+				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+					"Page_URL": window.location.href
+				});
+			});
+
+			embeddedservice_bootstrap.init(
+				'00DOy00000NPh2v',
+				'UNLV_Messaging_Public',
+				'https://unlv--devnf2.sandbox.my.site.com/ESWUNLVMessagingPublic1776822254199',
+				{
+					scrt2URL: 'https://unlv--devnf2.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://unlv--devnf2.sandbox.my.site.com/ESWUNLVMessagingPublic1776822254199/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
   </body>
 </html>
