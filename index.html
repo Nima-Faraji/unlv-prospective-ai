@@ -273,18 +273,6 @@
 				});
 			});
 
-			// (2) New: answer the pre-chat component's request for the host URL
-			window.addEventListener("message", (event) => {
-				// Only respond to the Salesforce site iframe:
-				if (event.origin !== 'https://unlv--devnf2.sandbox.my.site.com') return;
-				if (event.data && event.data.type === 'PRECHAT_REQUEST_HOST_URL') {
-					event.source.postMessage(
-						{ type: 'PRECHAT_HOST_URL', url: window.location.href },
-						event.origin
-					);
-				}
-			});
-
 			embeddedservice_bootstrap.init(
 				'00DOy00000NPh2v',
 				'UNLV_Messaging_Public',
