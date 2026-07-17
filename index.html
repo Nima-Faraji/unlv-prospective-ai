@@ -266,11 +266,23 @@
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US';
 
-			// Push the host page URL into a hidden pre-chat field once chat is ready
+			// (1) Existing: push host URL into a hidden pre-chat field for the flow
 			window.addEventListener("onEmbeddedMessagingReady", () => {
 				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
 					"Page_URL": window.location.href
 				});
+			});
+
+			// (2) New: answer the pre-chat component's request for the host URL
+			window.addEventListener("message", (event) => {
+				// Only respond to the Salesforce site iframe:
+				if (event.origin !== 'https://unlv--devnf2.sandbox.my.site.com') return;
+				if (event.data && event.data.type === 'PRECHAT_REQUEST_HOST_URL') {
+					event.source.postMessage(
+						{ type: 'PRECHAT_HOST_URL', url: window.location.href },
+						event.origin
+					);
+				}
 			});
 
 			embeddedservice_bootstrap.init(
