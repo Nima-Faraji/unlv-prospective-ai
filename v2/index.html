@@ -289,6 +289,12 @@
         try {
           embeddedservice_bootstrap.settings.language = "en_US";
 
+          window.addEventListener("onEmbeddedMessagingReady", () => {
+            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+              Page_URL: window.location.href
+            });
+          });
+
           embeddedservice_bootstrap.init(
             "00DOy00000NPh2v",
             "UNLV_Messaging_Public_V2",
