@@ -2,12 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <meta name="description" content="Get instant answers about UNLV admissions, financial aid, and campus life from our AI assistant" />
-    <title>UNLV Admissions Assistant </title>
-    <link rel="stylesheet" href="./styles.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <meta
+      name="description"
+      content="UNLV Admissions Assistant production test page for Salesforce Embedded Messaging on GitHub Pages."
+    />
+    <title>UNLV Admissions Assistant Prod</title>
+    <link rel="stylesheet" href="../styles.css" />
     <style>
-      /* Page-specific overrides */
       .hero-copy-block {
         display: flex;
         flex-direction: column;
@@ -40,7 +45,6 @@
         box-shadow: 0 0 0 4px rgba(110, 231, 183, 0.2);
       }
 
-      /* Steps with icons */
       .step-list {
         list-style: none;
         margin: 1.1rem 0 0;
@@ -74,25 +78,6 @@
         margin-top: 0.1rem;
       }
 
-      /* Topic chips — simple label row */
-      .topic-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 1.3rem;
-      }
-
-      .topic-tag {
-        padding: 0.35rem 0.85rem;
-        border-radius: 999px;
-        background: rgba(122, 0, 25, 0.07);
-        color: var(--accent);
-        font-size: 0.82rem;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-      }
-
-      /* Prompt chips — tighter label style */
       .prompt-chip .chip-sub {
         display: block;
         font-weight: 400;
@@ -101,89 +86,104 @@
         margin-top: 0.25rem;
       }
 
-      /* Copied feedback */
       .prompt-chip.copied {
         border-color: rgba(122, 0, 25, 0.4);
         background: linear-gradient(180deg, #fff5f1 0%, #ffeae4 100%);
       }
 
-      /* Cards — subtle icon */
       .card-icon {
         font-size: 1.6rem;
         margin-bottom: 0.6rem;
         display: block;
       }
 
-      /* Remove bottom panel */
-      .panel.panel-wide { display: none; }
+      .version-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff8f6;
+        font-size: 0.84rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .version-badge::before {
+        content: "";
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 50%;
+        background: var(--gold);
+      }
     </style>
   </head>
   <body>
     <div class="page-shell">
-
       <header class="site-header">
         <div class="brand-lockup">
-          <img class="brand-mark" src="./UNLV-Arch-Color.png" alt="UNLV logo" />
+          <img class="brand-mark" src="../UNLV-Arch-Color.png" alt="UNLV logo" />
           <div>
             <p class="eyebrow">UNLV Admissions</p>
             <p class="brand-copy">AI-powered student support</p>
           </div>
         </div>
-        <a class="header-link" href="https://www.unlv.edu/admissions">Admissions Office →</a>
+        <a class="header-link" href="../">Back to V1</a>
       </header>
 
       <main>
         <section class="hero">
           <div class="hero-copy-block">
-            <p class="hero-kicker">Available 24 / 7</p>
-            <h1>Your admissions questions, answered.</h1>
+            <span class="version-badge">Embedded Messaging Prod</span>
+            <p class="hero-kicker" style="margin-top: 1rem;">Production deployment test</p>
+            <h1>Test the production admissions assistant experience.</h1>
             <p class="hero-copy">
-              Ask anything about applying to UNLV — requirements, deadlines,
-              financial aid, campus visits, and more. Our AI assistant gives you
-              instant answers so you can focus on what matters: getting here.
+              This page gives you a dedicated GitHub Pages route for validating
+              the production Embedded Messaging deployment while preserving the
+              current V1 and V2 pages for side-by-side comparison.
             </p>
             <div class="actions">
               <a class="button primary" href="#starter-prompts">See example questions</a>
               <a class="button secondary" href="#topics">What can I ask?</a>
-              <a class="button secondary" href="./v2/">Open V2 Test Page</a>
-              <a class="button secondary" href="./prod/">Open Prod Test Page</a>
+              <a class="button secondary" href="../">Return to V1</a>
             </div>
             <div class="availability-row">
               <span class="avail-dot"></span>
-              Chat is live — look for the launcher in the bottom-right corner
+              Prod chat should appear in the bottom-right corner on this page
             </div>
           </div>
 
           <aside class="hero-panel">
-            <p class="panel-label">Getting started</p>
+            <p class="panel-label">What this page tests</p>
             <ul class="step-list">
               <li>
                 <span class="step-num">1</span>
-                <span>Click the chat launcher in the <strong>bottom-right corner</strong> of the page.</span>
+                <span>Load the production deployment from <strong>/unlv-prospective-ai/prod/</strong>.</span>
               </li>
               <li>
                 <span class="step-num">2</span>
-                <span>Pick a question below or type your own in plain language — no need for official terminology.</span>
+                <span>Confirm the launcher appears and the conversation starts normally.</span>
               </li>
               <li>
                 <span class="step-num">3</span>
-                <span>Follow the links and next steps provided to move forward with your application.</span>
+                <span>Verify the hidden `Page_URL` pre-chat value is captured for the prod route.</span>
               </li>
             </ul>
 
             <div class="status-pill" style="margin-top: 1.6rem;">
               <span class="status-dot"></span>
-              Powered by Salesforce Embedded Messaging
+              Powered by Salesforce Embedded Messaging Prod
             </div>
           </aside>
         </section>
 
-        <!-- Starter prompts -->
         <section class="starter-section" id="starter-prompts">
           <div class="section-heading">
             <p class="section-kicker">Example questions</p>
-            <h2>Not sure where to start?</h2>
-            <p>Tap any question to copy it, then paste it into the chat.</p>
+            <h2>Use the same prompts for a clean comparison</h2>
+            <p>Tap any question to copy it, then paste it into the prod chat.</p>
           </div>
 
           <div class="prompt-grid">
@@ -220,74 +220,77 @@
           </div>
 
           <p class="prompt-hint" id="prompt-hint">
-            These are just starting points — you can ask anything related to your UNLV application.
+            Use these same questions on V1, V2, and Prod to compare the experience.
           </p>
         </section>
 
-        <!-- Topic cards -->
         <section class="grid" id="topics">
           <article class="card">
-            <span class="card-icon">🎓</span>
-            <p class="card-kicker">Admissions</p>
-            <h2>Apply with confidence</h2>
+            <span class="card-icon">🚀</span>
+            <p class="card-kicker">Production</p>
+            <h2>Validate the live setup</h2>
             <p>
-              Get clear answers on requirements, deadlines, and what to submit —
-              without having to navigate multiple offices or websites.
+              Use this route to confirm the production deployment behaves as
+              expected without replacing the existing test pages.
             </p>
           </article>
           <article class="card">
-            <span class="card-icon">💰</span>
-            <p class="card-kicker">Financial Aid</p>
-            <h2>Understand your options</h2>
+            <span class="card-icon">💬</span>
+            <p class="card-kicker">Conversation</p>
+            <h2>Check the student flow</h2>
             <p>
-              Ask about scholarships, grants, work-study, and FAFSA guidance
-              specific to UNLV so you can plan ahead.
+              Compare launcher load, response quality, prompt handling, and
+              pre-chat behavior against your lower environments.
             </p>
           </article>
           <article class="card">
-            <span class="card-icon">🏙️</span>
-            <p class="card-kicker">Campus & Life</p>
-            <h2>Picture yourself here</h2>
+            <span class="card-icon">📍</span>
+            <p class="card-kicker">Routing</p>
+            <h2>Use a dedicated URL path</h2>
             <p>
-              Learn about housing, student clubs, campus tours, and what it's
-              really like to be a Rebel in Las Vegas.
+              This route lets you share and test production independently at
+              `.../unlv-prospective-ai/prod/`.
             </p>
           </article>
         </section>
-
       </main>
 
       <footer class="footer">
-        <span>UNLV Admissions Assistant</span>
+        <span>UNLV Admissions Assistant Prod Test</span>
         <span id="year"></span>
       </footer>
     </div>
 
-<script type='text/javascript'>
-	function initEmbeddedMessaging() {
-		try {
-			embeddedservice_bootstrap.settings.language = 'en_US';
+    <script src="../script.js"></script>
 
-			// (1) Existing: push host URL into a hidden pre-chat field for the flow
-			window.addEventListener("onEmbeddedMessagingReady", () => {
-				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
-					"Page_URL": window.location.href
-				});
-			});
+    <script type="text/javascript">
+      function initEmbeddedMessaging() {
+        try {
+          embeddedservice_bootstrap.settings.language = "en_US";
 
-			embeddedservice_bootstrap.init(
-				'00DOy00000NPh2v',
-				'UNLV_Messaging_Public',
-				'https://unlv--devnf2.sandbox.my.site.com/ESWUNLVMessagingPublic1776822254199',
-				{
-					scrt2URL: 'https://unlv--devnf2.sandbox.my.salesforce-scrt.com'
-				}
-			);
-		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	};
-</script>
-<script type='text/javascript' src='https://unlv--devnf2.sandbox.my.site.com/ESWUNLVMessagingPublic1776822254199/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+          window.addEventListener("onEmbeddedMessagingReady", () => {
+            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+              Page_URL: window.location.href
+            });
+          });
+
+          embeddedservice_bootstrap.init(
+            "00Di0000000Hf66",
+            "UNLV_Messaging_Public_Test_1",
+            "https://unlv.my.site.com/ESWUNLVMessagingPublic1786990421058",
+            {
+              scrt2URL: "https://unlv.my.salesforce-scrt.com"
+            }
+          );
+        } catch (err) {
+          console.error("Error loading Embedded Messaging: ", err);
+        }
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://unlv.my.site.com/ESWUNLVMessagingPublic1786990421058/assets/js/bootstrap.min.js"
+      onload="initEmbeddedMessaging()"
+    ></script>
   </body>
 </html>
