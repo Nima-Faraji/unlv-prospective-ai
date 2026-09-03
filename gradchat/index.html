@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <meta
+      name="description"
+      content="UNLV graduate admissions chat test page for Salesforce Embedded Messaging on GitHub Pages."
+    />
+    <title>UNLV Graduate Admissions Chat</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .hero-copy-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: clamp(2.4rem, 6vw, 4.6rem);
+        max-width: 16ch;
+        line-height: 1.08;
+      }
+
+      .availability-row {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-top: 1.6rem;
+        font-size: 0.9rem;
+        color: rgba(255, 248, 246, 0.65);
+        font-weight: 600;
+        letter-spacing: 0.03em;
+      }
+
+      .avail-dot {
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 50%;
+        background: #6ee7b7;
+        flex-shrink: 0;
+        box-shadow: 0 0 0 4px rgba(110, 231, 183, 0.2);
+      }
+
+      .step-list {
+        list-style: none;
+        margin: 1.1rem 0 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+      }
+
+      .step-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        color: var(--ink-soft);
+        font-size: 0.97rem;
+        line-height: 1.55;
+      }
+
+      .step-num {
+        flex-shrink: 0;
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.1rem;
+      }
+
+      .prompt-chip .chip-sub {
+        display: block;
+        font-weight: 400;
+        font-size: 0.84rem;
+        color: var(--muted);
+        margin-top: 0.25rem;
+      }
+
+      .prompt-chip.copied {
+        border-color: rgba(122, 0, 25, 0.4);
+        background: linear-gradient(180deg, #fff5f1 0%, #ffeae4 100%);
+      }
+
+      .card-icon {
+        font-size: 1.6rem;
+        margin-bottom: 0.6rem;
+        display: block;
+      }
+
+      .version-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff8f6;
+        font-size: 0.84rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .version-badge::before {
+        content: "";
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <img class="brand-mark" src="../UNLV-Arch-Color.png" alt="UNLV logo" />
+          <div>
+            <p class="eyebrow">UNLV Graduate Admissions</p>
+            <p class="brand-copy">AI-powered support for graduate applicants</p>
+          </div>
+        </div>
+        <a class="header-link" href="../">Back to Main Page</a>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy-block">
+            <span class="version-badge">Grad Chat Test</span>
+            <p class="hero-kicker" style="margin-top: 1rem;">Graduate recruitment demo</p>
+            <h1>Help graduate applicants get started faster.</h1>
+            <p class="hero-copy">
+              This page is a focused graduate admissions chat experience for
+              testing questions about programs, application steps, deadlines,
+              and funding in a more grad-specific context.
+            </p>
+            <div class="actions">
+              <a class="button primary" href="#starter-prompts">See example questions</a>
+              <a class="button secondary" href="#topics">What can I ask?</a>
+              <a class="button secondary" href="../">Return to Main Page</a>
+            </div>
+            <div class="availability-row">
+              <span class="avail-dot"></span>
+              Grad chat should appear in the bottom-right corner on this page
+            </div>
+          </div>
+
+          <aside class="hero-panel">
+            <p class="panel-label">How to use this test</p>
+            <ul class="step-list">
+              <li>
+                <span class="step-num">1</span>
+                <span>Open the chat launcher in the <strong>bottom-right corner</strong>.</span>
+              </li>
+              <li>
+                <span class="step-num">2</span>
+                <span>Try one of the graduate-focused prompts below or ask your own question.</span>
+              </li>
+              <li>
+                <span class="step-num">3</span>
+                <span>Compare the experience with the undergraduate and environment-specific test pages.</span>
+              </li>
+            </ul>
+
+            <div class="status-pill" style="margin-top: 1.6rem;">
+              <span class="status-dot"></span>
+              Powered by Salesforce Embedded Messaging
+            </div>
+          </aside>
+        </section>
+
+        <section class="starter-section" id="starter-prompts">
+          <div class="section-heading">
+            <p class="section-kicker">Example questions</p>
+            <h2>Try graduate-focused prompts</h2>
+            <p>Tap any question to copy it, then paste it into the grad chat.</p>
+          </div>
+
+          <div class="prompt-grid">
+            <button class="prompt-chip" type="button"
+              data-prompt="What graduate programs does UNLV offer in my area of interest?">
+              What graduate programs does UNLV offer in my area of interest?
+              <span class="chip-sub">Program options, departments, degrees</span>
+            </button>
+            <button class="prompt-chip" type="button"
+              data-prompt="What do I need to submit for a graduate application at UNLV?">
+              What do I need to submit for a graduate application at UNLV?
+              <span class="chip-sub">Application materials, transcripts, recommendations</span>
+            </button>
+            <button class="prompt-chip" type="button"
+              data-prompt="When are the application deadlines for graduate programs at UNLV?">
+              When are the application deadlines for graduate programs?
+              <span class="chip-sub">Priority dates, departmental deadlines</span>
+            </button>
+            <button class="prompt-chip" type="button"
+              data-prompt="Are assistantships, scholarships, or other funding options available for graduate students?">
+              What funding options are available for graduate students?
+              <span class="chip-sub">Assistantships, fellowships, scholarships</span>
+            </button>
+            <button class="prompt-chip" type="button"
+              data-prompt="Do I need GRE, GMAT, or other test scores for the graduate program I want?">
+              Do I need GRE, GMAT, or other test scores?
+              <span class="chip-sub">Testing requirements by program</span>
+            </button>
+            <button class="prompt-chip" type="button"
+              data-prompt="Who should I contact if I have questions about a specific graduate department or application status?">
+              Who should I contact about a department or application status?
+              <span class="chip-sub">Department contacts, next steps, status questions</span>
+            </button>
+          </div>
+
+          <p class="prompt-hint" id="prompt-hint">
+            This page intentionally does not send the hidden `Page_URL` pre-chat field.
+          </p>
+        </section>
+
+        <section class="grid" id="topics">
+          <article class="card">
+            <span class="card-icon">🎓</span>
+            <p class="card-kicker">Programs</p>
+            <h2>Explore graduate options</h2>
+            <p>
+              Help prospective graduate students understand which programs may
+              fit their goals before they start a full application.
+            </p>
+          </article>
+          <article class="card">
+            <span class="card-icon">📝</span>
+            <p class="card-kicker">Application</p>
+            <h2>Clarify the process</h2>
+            <p>
+              Use the chat to answer common questions about materials,
+              recommendations, deadlines, and test expectations.
+            </p>
+          </article>
+          <article class="card">
+            <span class="card-icon">💼</span>
+            <p class="card-kicker">Funding</p>
+            <h2>Surface financial support</h2>
+            <p>
+              Let visitors ask about assistantships, scholarships, and other
+              funding paths early in the graduate decision process.
+            </p>
+          </article>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>UNLV Graduate Admissions Chat Test</span>
+        <span id="year"></span>
+      </footer>
+    </div>
+
+    <script src="../script.js"></script>
+
+    <script type="text/javascript">
+      function initEmbeddedMessaging() {
+        try {
+          embeddedservice_bootstrap.settings.language = "en_US";
+
+          embeddedservice_bootstrap.init(
+            "00Dct000005mou5",
+            "Grad_Chat_Test",
+            "https://unlventerprise--devjd.sandbox.my.site.com/ESWGradChatTest1788464226723",
+            {
+              scrt2URL: "https://unlventerprise--devjd.sandbox.my.salesforce-scrt.com"
+            }
+          );
+        } catch (err) {
+          console.error("Error loading Embedded Messaging: ", err);
+        }
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://unlventerprise--devjd.sandbox.my.site.com/ESWGradChatTest1788464226723/assets/js/bootstrap.min.js"
+      onload="initEmbeddedMessaging()"
+    ></script>
+  </body>
+</html>
